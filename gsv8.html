@@ -1,0 +1,1319 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gsv8 module &mdash; GSV-8PyPi 1.0.0 Dokumentation</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="top" title="GSV-8PyPi 1.0.0 Dokumentation" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0">GSV-8PyPi 1.0.0 Dokumentation&raquo;</li> 
+      </ul>
+    </div>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-gsv8">
+<span id="gsv8-module"></span><h1>gsv8 module<a class="headerlink" href="#module-gsv8" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Datum 03.2016: ME-Meßsysteme GmbH, Robert Bremsat, Dennis Rump</p>
+<dl class="class">
+<dt id="gsv8.gsv8">
+<em class="property">class </em><code class="descclassname">gsv8.</code><code class="descname">gsv8</code><span class="sig-paren">(</span><em>port</em>, <em>baudrate</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Klasse gsv8 stellt alle GSV-8 Methoden zur Verfügung. Sie müssen in Ihrem Python Script ein Objekt für jeden
+GSV-8 erstellen, um ein Objekt zu erzeugen verwenden Sie Variable = gsv8(port, baudrate)
+Sie können mehrere GSV8-Objekte erzeugen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> &#8211; Name des zu verwenden seriellen ports</li>
+<li><strong>baudrate</strong> &#8211; Bautrate</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="gsv8.gsv8.ReadValue">
+<code class="descname">ReadValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.ReadValue" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Methode ruft einmal Messwerte vom GSV ab (one shot).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortCode und AntwortErrorText</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.SetZero">
+<code class="descname">SetZero</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.SetZero" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Methode setzt die Kanäle des GSV null.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortCode und AntwortErrorText</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.StartTransmission">
+<code class="descname">StartTransmission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.StartTransmission" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Methode StartTransmission teilt dem GSV mit, das er Messdaten senden darf.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortCode und AntwortErrorText</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.StopTransmission">
+<code class="descname">StopTransmission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.StopTransmission" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Methode StopTransmission teilt dem GSV mit, das die Messwertübertragung angehalten werden soll.
+Sobald der Befehl abgesendet wird sendet der GSV8 keine Messdaten mehr über die serielle Schnittstelle.
+Sie können StartTransmission verwenden um die Übertragung erneut zu starten.
+Verwenden Sie getValue um einzel Werte abzurufen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortCode und AntwortErrorText</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.get1wireTempValue">
+<code class="descname">get1wireTempValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.get1wireTempValue" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Methode get1wireTempValue holt 1wire temp value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">Tempvalue</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getDIOdirection">
+<code class="descname">getDIOdirection</code><span class="sig-paren">(</span><em>gruppe</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getDIOdirection" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ruft die DIOdirection vom GSV ab</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>gruppe</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppennummer beinhalten</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getDIOinitialLevel">
+<code class="descname">getDIOinitialLevel</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getDIOinitialLevel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ruft das jeweilige initial DIOlevel vom GSV ab</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">0 wenn Low; 1 wenn high</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">uint8</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getDIOlevel">
+<code class="descname">getDIOlevel</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getDIOlevel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ruft das jeweilige DIOlevel vom GSV ab</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">0 wenn Low; 1 wenn high</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">uint8</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getDIOtype">
+<code class="descname">getDIOtype</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getDIOtype" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ließt den gesetzten DIOtype für den angegeben IO Pin aus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">assignedDMSchannel und DIOtype</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputType">
+<code class="descname">getInputType</code><span class="sig-paren">(</span><em>channel</em>, <em>inputType</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputType" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>holt den aktuellen Messbereiche für den angegeben InputType</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>channel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal</li>
+<li><strong>InputType</strong> (<em>uint8</em>) &#8211; InputType aus Datenblatt</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputTypeForBridge_2_5V">
+<code class="descname">getInputTypeForBridge_2_5V</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputTypeForBridge_2_5V" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Holt den aktuellen Messbereiche
+Fuer Brueckensensoren mi eienr Speisespannung von 8,75V</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputTypeForBridge_5V">
+<code class="descname">getInputTypeForBridge_5V</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputTypeForBridge_5V" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Holt den aktuellen Messbereiche
+Fuer Brueckensensoren mi eienr Speisespannung von 8,75V</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputTypeForBridge_8_75V">
+<code class="descname">getInputTypeForBridge_8_75V</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputTypeForBridge_8_75V" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Holt den aktuellen Messbereiche
+Fuer Brueckensensoren mi eienr Speisespannung von 8,75V</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputTypeForSingle_Ended">
+<code class="descname">getInputTypeForSingle_Ended</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputTypeForSingle_Ended" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Holt den aktuellen Messbereiche
+Fuer Signle-ended</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputTypeForTemp_K_Type">
+<code class="descname">getInputTypeForTemp_K_Type</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputTypeForTemp_K_Type" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Holt den aktuellen Messbereiche
+Fuer Temperatursensor K-Type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.getInputTypeForTemp_PT1000">
+<code class="descname">getInputTypeForTemp_PT1000</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.getInputTypeForTemp_PT1000" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Holt den aktuellen Messbereiche
+Fuer Temperatursensor PT1000</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.isDIOgroupInput">
+<code class="descname">isDIOgroupInput</code><span class="sig-paren">(</span><em>gruppe</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.isDIOgroupInput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>gibt True zurueck, wenn die Direction der gewaehlten DIO Gruppe als  Input konfiguriert ist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>gruppe</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppennummer beinhalten</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">True wenn die Direction der DIO Gruppe Input ist, False wenn die Direction der DIO Gruppe kein Input ist (als Output)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.isDIOgroupOutput">
+<code class="descname">isDIOgroupOutput</code><span class="sig-paren">(</span><em>gruppe</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.isDIOgroupOutput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>gibt True zurueck, wenn die Direction der gewaehlten DIO Gruppe als  Output konfiguriert ist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>gruppe</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppennummer beinhalten</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">True wenn die Direction der DIO Gruppe Output ist, False wenn die Direction der DIO Gruppe kein Output ist (als Input)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.isPinHigh">
+<code class="descname">isPinHigh</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.isPinHigh" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>IOPin level Abfrage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">True wenn IOPin High; False wenn IOPin Low</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.isPinLow">
+<code class="descname">isPinLow</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.isPinLow" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>IOPin level Abfrage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">True wenn IOPin Low; False wenn IOPin High</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.isResultOk">
+<code class="descname">isResultOk</code><span class="sig-paren">(</span><em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.isResultOk" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Die Methode erhält die Ergebnisliste (AntwortErrorCode und AntwortErrorText) und gibt True zurück, wenn kein Fehler vorliegt.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">True wenn AntwortErrorCode == 0x00; False wenn AntwortErrorCode != 0x00</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.isSixAxisMatrixActive">
+<code class="descname">isSixAxisMatrixActive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.isSixAxisMatrixActive" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>gibt den Status der Calibration Matrix wieder</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">True wenn Matrix aktiv; False wenn Matrix inaktiv</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.readDIOthreshold">
+<code class="descname">readDIOthreshold</code><span class="sig-paren">(</span><em>IOPin</em>, <em>upper_or_lower_trigger</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.readDIOthreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ließt die oberen oder unteren Schwellwert für den angegeben IOPin</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>upper_or_lower_trigger</strong> (<em>uint8</em>) &#8211; Lower=0; Upper=1</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.readDataRate">
+<code class="descname">readDataRate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.readDataRate" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ließt die Datenrate in Hz</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Rückgabe:</th><td class="field-body">Frequenz in Hz</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.readLowerDIOthreshold">
+<code class="descname">readLowerDIOthreshold</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.readLowerDIOthreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ließt den unteren Schwellwert des angegeben IOPin´s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">unterer Schwellwert</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.readUpperDIOthreshold">
+<code class="descname">readUpperDIOthreshold</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.readUpperDIOthreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Ließt den oberen Schwellwert des angegeben IOPin´s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">unterer Schwellwert</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOdirection">
+<code class="descname">setDIOdirection</code><span class="sig-paren">(</span><em>gruppe</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOdirection" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>setzt die DIOdirection der jeweiligen Gruppe vom GSV</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>gruppe</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppennummer beinhalten</li>
+<li><strong>direction</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppendirection beinhalten</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOgroupToInput">
+<code class="descname">setDIOgroupToInput</code><span class="sig-paren">(</span><em>gruppe</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOgroupToInput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt die Direction der Gruppe zu Input</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>gruppe</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppennummer beinhalten</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOgroupToOutput">
+<code class="descname">setDIOgroupToOutput</code><span class="sig-paren">(</span><em>gruppe</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOgroupToOutput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt die Direction der Gruppe zu Output</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>gruppe</strong> (<em>uint8</em>) &#8211; Muss die DIO Gruppennummer beinhalten</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOinitialLevel">
+<code class="descname">setDIOinitialLevel</code><span class="sig-paren">(</span><em>IOPin</em>, <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOinitialLevel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt das DIO level am gewünschten Pin
+level 1 = high 0 low</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>level</strong> (<em>uint8</em>) &#8211; high=1; low=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOlevel">
+<code class="descname">setDIOlevel</code><span class="sig-paren">(</span><em>IOPin</em>, <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOlevel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt das DIO level am gewünschten Pin
+level 1 = high 0 low</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>level</strong> (<em>uint8</em>) &#8211; high=1; low=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOtoGenralPurposeInput">
+<code class="descname">setDIOtoGenralPurposeInput</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOtoGenralPurposeInput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Fuer den gewaehlte IOPin wird der DIOtype Genral-Purpose Input gesetzt</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOtoGenralPurposeOutput">
+<code class="descname">setDIOtoGenralPurposeOutput</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOtoGenralPurposeOutput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Fuer den gewaehlte IOPin wird der DIOtype Genral-Purpose Out gesetzt</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setDIOtype">
+<code class="descname">setDIOtype</code><span class="sig-paren">(</span><em>IOPin</em>, <em>dioType</em>, <em>assignedDMSchannel=0</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setDIOtype" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>dioType</strong> (<em>uint8</em>) &#8211; DIO Type aus Datenblatt</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputToTaraInputForAllChannels">
+<code class="descname">setInputToTaraInputForAllChannels</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputToTaraInputForAllChannels" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin muss im Vorfeld als Eingang (Input) konfiguriert werden. Wird dieser Eingang high, wird Tara für alle DMS-Eingaenge aufgerufen</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputToTaraInputForChannel">
+<code class="descname">setInputToTaraInputForChannel</code><span class="sig-paren">(</span><em>IOPin</em>, <em>assignedDMSchannel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputToTaraInputForChannel" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin muss im Vorfeld als Eingang (Input) konfiguriert werden. Wird dieser Eingang high, wird für den gewaehlte DMS-Eingang Tara aufgerufen</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputType">
+<code class="descname">setInputType</code><span class="sig-paren">(</span><em>channel</em>, <em>inputType</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputType" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>channel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal</li>
+<li><strong>InputType</strong> (<em>uint8</em>) &#8211; InputType aus Datenblatt</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputTypeToBridge_2_5V">
+<code class="descname">setInputTypeToBridge_2_5V</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputTypeToBridge_2_5V" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal
+Fuer Brueckensensoren mi eienr Speisespannung von 2,5V</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputTypeToBridge_5V">
+<code class="descname">setInputTypeToBridge_5V</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputTypeToBridge_5V" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal
+Fuer Brueckensensoren mi eienr Speisespannung von 5V</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputTypeToBridge_8_75V">
+<code class="descname">setInputTypeToBridge_8_75V</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputTypeToBridge_8_75V" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal
+Fuer Brueckensensoren mi eienr Speisespannung von 8,75V</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputTypeToSingle_Ended">
+<code class="descname">setInputTypeToSingle_Ended</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputTypeToSingle_Ended" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal
+Fuer Single-ended</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputTypeToTEMP_PT1000">
+<code class="descname">setInputTypeToTEMP_PT1000</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputTypeToTEMP_PT1000" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal
+Fuer Temperatursensor PT1000</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setInputTypeToTemp_K_Type">
+<code class="descname">setInputTypeToTemp_K_Type</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setInputTypeToTemp_K_Type" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt InputType für den angegeben DMS Kanal
+Fuer Temperatursensor K-Type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>channel</strong> (<em>uint8</em>) &#8211; DMS Kanal 1..8 oder 0 für alle</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setOutputHighByThreshold">
+<code class="descname">setOutputHighByThreshold</code><span class="sig-paren">(</span><em>IOPin</em>, <em>assignedDMSchannel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setOutputHighByThreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin wir auf high wenn Messwert unterhalb des unteren Schwellwerts faellt und low wenn er ueber den oberen Schwellwert steigt</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><p class="first">IOPin: 1..16; assignedDMSchannel uint8</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first">[antwortFrame.ErrorCode, AntwortErrorText]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setOutputHighIfInsideWindow">
+<code class="descname">setOutputHighIfInsideWindow</code><span class="sig-paren">(</span><em>IOPin</em>, <em>assignedDMSchannel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setOutputHighIfInsideWindow" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin wir auf low geschaltet solange der aktuelle Messwert sich außerhalb der gesetzten Schwellwerte befindet</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setOutputHighIfOutsideWindow">
+<code class="descname">setOutputHighIfOutsideWindow</code><span class="sig-paren">(</span><em>IOPin</em>, <em>assignedDMSchannel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setOutputHighIfOutsideWindow" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin wir auf low geschaltet solange der aktuelle Messwert sich innerhlab der gesetzten Schwellwerte befindet</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setOutputLowByThreshold">
+<code class="descname">setOutputLowByThreshold</code><span class="sig-paren">(</span><em>IOPin</em>, <em>assignedDMSchannel</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setOutputLowByThreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin wir auf low wenn Messwert unterhalb des unteren Schwellwerts faellt und high wenn er ueber den oberen Schwellwert steigt</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>assignedDMSchannel</strong> (<em>uint8</em>) &#8211; zugehoeriger DMS-Kanal; default=0</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setPinToHigh">
+<code class="descname">setPinToHigh</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setPinToHigh" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt IOPin auf High</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setPinToLow">
+<code class="descname">setPinToLow</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setPinToLow" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt IOPin auf Low</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setPinTypeToInput">
+<code class="descname">setPinTypeToInput</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setPinTypeToInput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin wird als Input konfiguriert, hierbei ist die Gruppenrichtung (Input oder output) zu beachten</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setPinTypeToOutput">
+<code class="descname">setPinTypeToOutput</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setPinTypeToOutput" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin wird als Output konfiguriert, hierbei ist die Gruppenrichtung (Input oder output) zu beachten</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setSixAxisMatrixActive">
+<code class="descname">setSixAxisMatrixActive</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setSixAxisMatrixActive" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt den Status der Calibration Matrix (aktiv oder inaktiv)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>state</strong> (<em>bool</em>) &#8211; gewuenschter neuer Status der Matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setStartTransmissionByInputIsHigh">
+<code class="descname">setStartTransmissionByInputIsHigh</code><span class="sig-paren">(</span><em>IOPin</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setStartTransmissionByInputIsHigh" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt DIOtype für den angegeben IO Pin
+Der gewaehlte IOPin muss im Vorfeld als Eingang (Input) konfiguriert werden. Wird dieser Eingang high, versendet der GSV8 mit der konfigurierten Datenrate Messwert-Frames</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.setUserScaleBySensor">
+<code class="descname">setUserScaleBySensor</code><span class="sig-paren">(</span><em>kanal</em>, <em>sensor_messbereich</em>, <em>sensor_kennwert</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.setUserScaleBySensor" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Errechnet und setzt einen neuen ScalierungsFaktor fuer den jeweiligen DMS-Kanal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>kanal</strong> (<em>uint8</em>) &#8211; DMS-Kanal 1..8 oder 0</li>
+<li><strong>sensor_messbereich</strong> (<em>float</em>) &#8211; Messbereich des Sensors</li>
+<li><strong>sensor_kennwert</strong> (<em>float</em>) &#8211; IOPin Kennwert des Sensors</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.startCSVrecording">
+<code class="descname">startCSVrecording</code><span class="sig-paren">(</span><em>frequenz</em>, <em>csvFilepath</em>, <em>prefix=''</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.startCSVrecording" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Start der Messwertaufnahme. Anfallende Messwerte werden in einer CSV-Datei gespeichert.
+Der Dateiname orientiert sich an dem aktuelen Datum und der aktuellen Uhrzeit</p>
+<p><em>Achtung</em> Es wird StartTransmission aufgerufen!</p>
+<p><em>Achtung</em> CSV-Dateipfad muss vorhanden sein!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>frequenz</strong> (<em>float</em>) &#8211; Gibt die gewuenschte Frequenz in Hz an</li>
+<li><strong>csvFilepath</strong> (<em>String</em>) &#8211; Zielpfad fuer die CSV-Datei</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.startCSVrecordingWithoutStartTransmisson">
+<code class="descname">startCSVrecordingWithoutStartTransmisson</code><span class="sig-paren">(</span><em>csvFilepath</em>, <em>prefix=''</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.startCSVrecordingWithoutStartTransmisson" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Start der Messwertaufnahme. Anfallende Messwerte werden in einer CSV-Datei gespeichert.
+Der Dateiname orientiert sich an dem aktuelen Datum und der aktuellen Uhrzeit</p>
+<p><em>Achtung</em> Es wird KEIN StartTransmission aufgerufen!</p>
+<p><em>Achtung</em> CSV-Dateipfad muss vorhanden sein!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>csvFilepath</strong> (<em>String</em>) &#8211; Zielpfad fuer die CSV-Datei</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.stopCSVrecording">
+<code class="descname">stopCSVrecording</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.stopCSVrecording" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Stoppt die Messwertaufnahme.</p>
+<p><em>Achtung</em> Es wird StopTransmission aufgerufen!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.stopCSVrecordingWithoutStopTransmission">
+<code class="descname">stopCSVrecordingWithoutStopTransmission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.stopCSVrecordingWithoutStopTransmission" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Stoppt die Messwertaufnahme.</p>
+<p><em>Achtung</em> Es wird KEIN StopTransmission aufgerufen!</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="gsv8.gsv8.transmissionIsRunning">
+<code class="descname">transmissionIsRunning</code><em class="property"> = True</em><a class="headerlink" href="#gsv8.gsv8.transmissionIsRunning" title="Link zu dieser Definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.writeDIOthreshold">
+<code class="descname">writeDIOthreshold</code><span class="sig-paren">(</span><em>IOPin</em>, <em>upper_or_lower_trigger</em>, <em>threshold_value</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.writeDIOthreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt die oberen oder unteren Schwellwert für den angegeben IO Pin</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>upper_or_lower_trigger</strong> (<em>uint8</em>) &#8211; Lower=0; Upper=1</li>
+<li><strong>threshold_value</strong> (<em>float</em>) &#8211; Schwellwert</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.writeDataRate">
+<code class="descname">writeDataRate</code><span class="sig-paren">(</span><em>frequenz</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.writeDataRate" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt die Datenrate in Hz</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><strong>frequenz</strong> (<em>float</em>) &#8211; Gibt die gewuenschte Frequenz in Hz an</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body">AntwortErrorCode und AntwortErrorText</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body">liste</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.writeLowerDIOthreshold">
+<code class="descname">writeLowerDIOthreshold</code><span class="sig-paren">(</span><em>IOPin</em>, <em>threshold_value</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.writeLowerDIOthreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt den unteren Schwellwert des gegeben IOPin´s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>threshold_value</strong> (<em>float</em>) &#8211; Schwellwert</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="gsv8.gsv8.writeUpperDIOthreshold">
+<code class="descname">writeUpperDIOthreshold</code><span class="sig-paren">(</span><em>IOPin</em>, <em>threshold_value</em><span class="sig-paren">)</span><a class="headerlink" href="#gsv8.gsv8.writeUpperDIOthreshold" title="Link zu dieser Definition">¶</a></dt>
+<dd><p>Setzt den oberen Schwellwert des gegeben IOPin´s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first simple">
+<li><strong>IOPin</strong> (<em>uint8</em>) &#8211; IOPin 1..16 (1.1 - 4.4)</li>
+<li><strong>threshold_value</strong> (<em>float</em>) &#8211; Schwellwert</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Rückgabe:</th><td class="field-body"><p class="first">AntwortErrorCode und AntwortErrorText</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Rückgabetyp:</th><td class="field-body"><p class="first last">liste</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0">GSV-8PyPi 1.0.0 Dokumentation&raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, ME-Meßsysteme GmbH.
+      Mit <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5 erstellt.
+    </div>
+  </body>
+</html>
