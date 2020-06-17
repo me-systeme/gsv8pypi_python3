@@ -647,10 +647,6 @@ class gsv8:
 
         # frequenz umwandeln
         data = self._gsvLib.convertFloatToBytes(frequenz)
-        #print("frequenz: ",frequenz)
-        #print("data: ",data)
-        #print("data: ",type(data))
-        #print("data: ",len(data))
         # erstelle zu sendene Bytefolge für WriteDataRate
         output = self._gsvLib.buildWriteDataRate(data)
         # sende Daten via serialport
@@ -766,7 +762,6 @@ class gsv8:
 
         # sende Daten via serialport
         self._gsvSerialPort.write(output)
-
         # ersten AntwortFrame aus der Queue holen
         antwortFrame = self._antwortQueue.get()
 
@@ -932,7 +927,6 @@ class gsv8:
         antwortFrame = self._antwortQueue.get()
 
         # returnstatment erzeugen
-        # returnstatment erzeugen
         if (antwortFrame.getAntwortErrorCode() == 0x00):
             result = [antwortFrame.getAntwortErrorCode(), antwortFrame.getAntwortErrorText()]
         else:
@@ -976,7 +970,7 @@ class gsv8:
     def setOutputHighByThreshold(self, IOPin, assignedDMSchannel):
         '''
         Setzt DIOtype für den angegeben IO Pin
-        Der gewaehlte IOPin wir auf high wenn Messwert unterhalb des unteren Schwellwerts faellt und low wenn er ueber den oberen Schwellwert steigt
+        Der gewaehlte IOPin wird auf high wenn Messwert unterhalb des unteren Schwellwerts faellt und low wenn er ueber den oberen Schwellwert steigt
 
         :parameter: IOPin: 1..16; assignedDMSchannel uint8
 
@@ -1486,7 +1480,6 @@ class gsv8:
         :return: AntwortErrorCode und AntwortErrorText
         :rtype: liste
         '''
-
         # siehe Typen in der Protokollreferenz
         return self.getInputType(channel, 0xFF)
 
@@ -1498,23 +1491,22 @@ class gsv8:
         :param InputType: InputType aus Datenblatt
         :type channel: uint8
         :type InputType: uint8
-        :return: AntwortErrorCode und AntwortErrorText
+        :return: AntwortErrorCode, AntwortErrorText und Input-Type
         :rtype: liste
         '''
 
         # erstelle zu sendene Bytefolge für SetDIOtype
         output = self._gsvLib.buildReadInputType(channel, inputType)
-
         # sende Daten via serialport
         self._gsvSerialPort.write(output)
 
         # ersten AntwortFrame aus der Queue holen
         antwortFrame = self._antwortQueue.get()
-
         # returnstatment erzeugen
 
         if (antwortFrame.getAntwortErrorCode() == 0x00):
-            result = [antwortFrame.getAntwortErrorCode(), antwortFrame.getAntwortErrorText()]
+            result = [antwortFrame.getAntwortErrorCode(), antwortFrame.getAntwortErrorText(),self._gsvLib.convertToUint32_t(antwortFrame.getPayload()[1:5])[0]]
         else:
             raise GSV_CommunicationException(antwortFrame.getAntwortErrorCode(), antwortFrame.getAntwortErrorText())
         return result
+

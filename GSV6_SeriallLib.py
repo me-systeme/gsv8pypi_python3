@@ -202,26 +202,14 @@ class GSV6_seriall_lib:
 
     def encode_anfrage_frame(self, kommando, kommando_para=[]):
         # 0xAA=SyncByte; 0x50=Anfrage,Seriell,Length=0
-        #print("-"*20)
         result = bytearray([0xAA, 0x90])
         result.append(kommando)
-        #print("result: ",result)
-        #print("result: ",type(result))
-        #print("kommando_para: ",kommando_para)
-        #print("kommando_para: ",kommando_para)
-        #print("kommando_para: ",dir(kommando_para))
-        
-        #print("kommando_para: ",type(kommando_para))
-        #print("kommando_para: ",len(kommando_para))
         if len(kommando_para) > 0:
-            #print("kommando_para.encode: ",kommando_para.encode())
             #result.extend(kommando_para.encode())
             result.extend(kommando_para)
             # update length
             result[1] = (result[1] | len(kommando_para))
         result.append(0x85)
-        #print("result: ",result)
-        #print("-"*20)
         return result
 
     def decode_antwort_frame(self, data):
@@ -283,7 +271,7 @@ class GSV6_seriall_lib:
             return
 
         # B	= unsigned char; Python-Type: integer, size:1
-        return unpack('>' + str(length) + "B", data)
+        return unpack('>' + str(int(length)) + "B", data)
 
     def convertToUint16_t(self, data):
         # H	= unsigned short; Python-Type: integer, size:2
@@ -321,8 +309,8 @@ class GSV6_seriall_lib:
             return
 
         # I	= unsigned int; Python-Type: integer, size:4
-        #return unpack('>' + str(length / 4) + "I", data)
-        return unpack('>' + "I", data)
+        return unpack('>' + str(int(length / 4)) + "I", data)
+        #return unpack('>' + "I", data)
 
     def convertToSint32_t(self, data):
         length = len(data)
@@ -351,11 +339,6 @@ class GSV6_seriall_lib:
             return
 
         # > = Big-Endian; f	= float; Python-Type: float, size:4
-        #print("data: ", data)
-        #print("data: ", type(data))
-        #print("data: ", len(data))
-        #print("length: ", length)
-        #print("length: ", length/4)
         #return unpack('>' + bytearray(length / 4) + "f", data)
         #return unpack('>' + str(length / 4) + "f", data)
         return unpack('>' + str(int(length / 4)) + "f", data)
@@ -536,14 +519,6 @@ class GSV6_seriall_lib:
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('WriteUserOffset'), data)
 
     def buildReadInputType(self, channelNo, sensindex=0x00):
-        #print("[self.convertUInt8ToBytes(channelNo), sensindex]: ",[self.convertUInt8ToBytes(channelNo), sensindex])
-        #print("convertUInt8ToBytes(channelNo): ",self.convertUInt8ToBytes(channelNo))
-        #print("convertUInt8ToBytes(channelNo): ",type(self.convertUInt8ToBytes(channelNo)))
-        #print("sensindex]: ",sensindex)
-        #print("sensindex]: ",self.convertUInt8ToBytes(sensindex))
-        #print("sensindex]: ",type(sensindex))
-        #print("sensindex]: ",type(self.convertUInt8ToBytes(sensindex)))
-        #print("type: ",type([self.convertUInt8ToBytes(channelNo), sensindex]))
         #data = bytearray([self.convertUInt8ToBytes(channelNo), self.convertUInt8ToBytes(sensindex)])
         data = bytearray([channelNo, sensindex])
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('GetInputType'), data)
@@ -555,7 +530,8 @@ class GSV6_seriall_lib:
         data.extend(inputType)
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('MEwriteInputRange'), data)
 
-    def buildSetInputTypeGSV8(self, channelNo, sensIndex, inputType):
+    #def buildSetInputTypeGSV8(self, channelNo, sensIndex, inputType):
+    def buildSetInputTypeGSV8(self, channelNo, inputType):
         data = bytearray([channelNo, inputType])
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('SetInputType'), data)
 
@@ -603,16 +579,19 @@ class GSV6_seriall_lib:
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('GetDIOlevel'),data)
 
     def buildSetDIOlevel(self, IOPin, newlevel):
-        data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        #data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        data = bytearray([IOPin])
         data.extend(self.convertUInt16ToBytes(newlevel))
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('SetDIOlevel'), data)
 
     def buildGetDIOinitialLevel(self, IOPin):
-        data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        #data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        data = bytearray([IOPin])
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('GetDIOinitialLevel'),data)
 
     def buildSetDIOinitialLevel(self, IOPin, newlevel):
-        data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        #data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        data = bytearray([IOPin])
         data.extend(self.convertUInt16ToBytes(newlevel))
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('SetDIOinitialLevel'), data)
 
@@ -634,7 +613,8 @@ class GSV6_seriall_lib:
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('WriteDIOthreshold'), data)
 
     def buildGetDIOtype(self, IOPin):
-        data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        #data = bytearray([self.convertUInt8ToBytes(IOPin)])
+        data = bytearray([IOPin])
         return self.encode_anfrage_frame(anfrage_code_to_shortcut.get('GetDIOtype'),data)
 
     def buildSetDIOtype(self, IOPin, DIOtype, assignedDMSchannel):

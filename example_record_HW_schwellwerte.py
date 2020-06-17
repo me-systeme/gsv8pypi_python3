@@ -60,7 +60,7 @@ if __name__ == '__main__':
     running = True
     # construct device
     # UNIX
-    dev1 = gsv8("/dev/ttyACM0",115200)
+    dev1 = gsv8("/dev/ttyACM0",230400)
     # Windows
     # dev1 = gsv8("COM22", 115200)
 

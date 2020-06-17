@@ -56,7 +56,7 @@ from gsv8 import gsv8
 if __name__ == '__main__':
     # construct device
     # Unix
-    dev1 = gsv8("/dev/ttyACM0",115200)
+    dev1 = gsv8("/dev/ttyACM0",230400)
     # Windows
     # dev1 = gsv8(21, 115200)
 
@@ -64,34 +64,34 @@ if __name__ == '__main__':
     result = dev1.writeDataRate(50.0)
     # Ergebnis pruefen
     if(dev1.isResultOk(result)):
-        print "writeDataRate erfolgreich"
+        print("writeDataRate erfolgreich")
 
     # datenrate veraendern
-    print 'aktuelle Datenrate: {} Hz'.format(dev1.readDataRate())
+    print('aktuelle Datenrate: {} Hz'.format(dev1.readDataRate()))
 
     # DIO Gruppe 1 als Input Konfigurieren ( IOPin 1..4 (1.1 - 1.4) )
     result = dev1.setDIOgroupToInput(1)
     # Ergebnis pruefen
     if(dev1.isResultOk(result)):
-        print "setDIOgroupToInput  fuer Gruppe 1 erfolgreich"
+        print("setDIOgroupToInput  fuer Gruppe 1 erfolgreich")
 
     # DIO Gruppe 2 als Output Konfigurieren ( IOPin 5..8 (2.1 - 2.4) )
     result = dev1.setDIOgroupToOutput(2)
     # Ergebnis pruefen
     if(dev1.isResultOk(result)):
-        print "setDIOgroupToOutput fuer Gruppe 2 erfolgreich"
+        print("setDIOgroupToOutput fuer Gruppe 2 erfolgreich")
 
     # DIO Gruppe 3 als Output Konfigurieren ( IOPin 9..12 (3.1 - 3.4) )
     result = dev1.setDIOgroupToOutput(3)
     # Ergebnis pruefen
     if(dev1.isResultOk(result)):
-        print "setDIOgroupToOutput fuer Gruppe 3 erfolgreich"
+        print("setDIOgroupToOutput fuer Gruppe 3 erfolgreich")
 
     # DIO Gruppe 4 als Out Konfigurieren ( IOPin 13..16 (4.1 - 4.4) )
     result = dev1.setDIOgroupToOutput(4)
     # Ergebnis pruefen
     if(dev1.isResultOk(result)):
-        print "setDIOgroupToOutput  fuer Gruppe 4 erfolgreich"
+        print("setDIOgroupToOutput  fuer Gruppe 4 erfolgreich")
 
 
     dev1.setInputToTaraInputForAllChannels(3);
@@ -117,8 +117,8 @@ if __name__ == '__main__':
     dev1.setOutputHighIfOutsideWindow(16,7)
 
     # lesen und schreiben des oberen oder unteren Schwellwertes
-    print 'unterer Schwellwert fuer DMS-Kanal 1: {}'.format(dev1.readLowerDIOthreshold(9))
-    print 'oberer  Schwellwert fuer DMS-Kanal 1: {}'.format(dev1.readUpperDIOthreshold(9))
+    print('unterer Schwellwert fuer DMS-Kanal 1: {}'.format(dev1.readLowerDIOthreshold(9)))
+    print('oberer  Schwellwert fuer DMS-Kanal 1: {}'.format(dev1.readUpperDIOthreshold(9)))
 
     # Schwellwerte fuer Fx
     dev1.writeLowerDIOthreshold(9,+5.0)
@@ -155,9 +155,9 @@ if __name__ == '__main__':
         # aktiverung/deaktivierung erflgreich
 
     if(dev1.isSixAxisMatrixActive()):
-        print "matrix active"
+        print("matrix active")
     else:
-        print "matrix inactive"
+        print("matrix inactive")
 
     # destruct device
     dev1 = None

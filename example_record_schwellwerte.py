@@ -70,21 +70,21 @@ if __name__ == '__main__':
 
     # einen eine Messung anstoßen
     measurement = dev1.ReadValue()
-    print 'Kanal 1: {}'.format(measurement.getChannel1())
-    print measurement.toString()
+    print('Kanal 1: {}'.format(measurement.getChannel1()))
+    print(measurement.toString())
 
     measurement2 = dev1.ReadValue()
-    print 'Kanal 1: {}'.format(measurement2.getChannel1())
-    print measurement2.toString()
+    print('Kanal 1: {}'.format(measurement2.getChannel1()))
+    print(measurement2.toString())
 
-    print 'is Pin 1 high?: {}'.format(dev1.isPinHigh(1))
-    print 'is Pin 2 low?: {}'.format(dev1.isPinLow(2))
+    print('is Pin 1 high?: {}'.format(dev1.isPinHigh(1)))
+    print('is Pin 2 low?: {}'.format(dev1.isPinLow(2)))
 
     # ist die Verrechnungsmatrix aktiv?
     if (dev1.isSixAxisMatrixActive()):
-        print "matrix active"
+        print("matrix active")
     else:
-        print "matrix inactive"
+        print("matrix inactive")
 
     dev1.StartTransmission()
 
